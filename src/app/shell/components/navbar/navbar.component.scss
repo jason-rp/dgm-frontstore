@@ -1,5 +1,5 @@
-@import "src/theme/theme-variables";
-@import "src/theme/utils";
+@import "../../../theme/theme-variables.scss";
+@import "../../../theme/utils";
 
 :host ::ng-deep {
   .navbar {

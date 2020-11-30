@@ -17,15 +17,33 @@ import { isPlatformBrowser } from '@angular/common';
 import { HeroesComponent } from './pages/heroes/heroes.component';
 import { HeroDetailComponent } from './pages/heroes/hero-detail/hero-detail.component';
 import { HeroSearchComponent } from './pages/heroes/hero-search/hero-search.component';
-
+import { ShellModule } from '@app/shell/shell.module';
+import { MissingTranslationHandler, TranslateModule, MissingTranslationHandlerParams } from '@ngx-translate/core';
+import { BlockUIModule } from '@prmng/blockui';
+import { ToastModule } from '@prmng/toast';
+import { ConfirmDialogModule } from '@prmng/confirmdialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// required for AoT
+export class MyMissingTranslationHandler implements MissingTranslationHandler {
+  handle(params: MissingTranslationHandlerParams) {
+    return params.key;
+  }
+}
 
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: 'tour-of-heroes' }),
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-
+    ShellModule,
+    TranslateModule.forRoot({
+      missingTranslationHandler: { provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler },
+    }),
+    BlockUIModule,
+    ToastModule,
+    ConfirmDialogModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -39,7 +57,7 @@ import { HeroSearchComponent } from './pages/heroes/hero-search/hero-search.comp
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
   ],
   bootstrap: [ AppComponent ]
 })

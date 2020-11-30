@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { Logger } from '@app/@shared/services/logger.service';
-import de from '../../translations/de.json';
-import en from '../../translations/en.json';
+import de from '../translations/de.json';
+import en from '../translations/en.json';
 
 const log = new Logger('I18nService');
 const languageKey = 'language';
@@ -21,7 +21,7 @@ const languageKey = 'language';
 })
 export class I18nService {
   defaultLanguage!: string;
-  supportedLanguages!: string[];
+  public supportedLanguages!: string[];
 
   private langChangeSubscription!: Subscription;
 

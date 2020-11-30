@@ -1,5 +1,5 @@
-@import "src/theme/theme-variables";
-@import "src/theme/utils";
+@import "../../app/theme/theme-variables.scss";
+@import "../../app/theme/utils";
 
 /* 
   ::ng-deep disables the Angular View Encapsulation to override default styles of Primeng. 

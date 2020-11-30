@@ -1,0 +1,27 @@
+@import "~material-design-icons/iconfont/material-icons.css";
+
+/* Reusable mixins */
+@mixin font-material-icons() {
+  font-family: "Material Icons";
+  font-size: 24px;
+}
+
+@mixin font-material-icons-oultined() {
+  font-family: "Material Icons Outlined";
+  font-size: 24px;
+}
+
+/* Define icons as CSS classes here */
+.icon-menu {
+  &::after {
+    @include font-material-icons();
+    content: "menu";
+  }
+}
+
+.icon-expand-more {
+  &::after {
+    @include font-material-icons();
+    content: "expand_more";
+  }
+}

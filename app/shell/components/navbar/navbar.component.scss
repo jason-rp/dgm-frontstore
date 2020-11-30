@@ -1,0 +1,37 @@
+@import "src/theme/theme-variables";
+@import "src/theme/utils";
+
+:host ::ng-deep {
+  .navbar {
+    display: flex;
+    width: calc(100% + #{$app-content-horizontal-padding} * 2);
+    height: $navbar-height;
+    margin-left: -$app-content-horizontal-padding;
+    margin-bottom: $navbar-bottom-margin;
+    background-color: white;
+    border-radius: 0;
+    top: 0;
+    position: sticky;
+    z-index: 3;
+
+    &__left {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.p-input-icon-left {
+  > i {
+    margin-top: unset;
+    transform: translateY(-50%);
+  }
+}
+
+.search-box {
+  .p-inputtext {
+    padding-top: $space-8;
+    padding-bottom: $space-8;
+    width: 18.75rem;
+  }
+}

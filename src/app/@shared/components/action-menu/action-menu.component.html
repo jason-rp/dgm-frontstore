@@ -1,0 +1,10 @@
+<button
+  *ngIf="actions.length > 0"
+  pButton
+  class="btn-outlined btn-outlined--sm {{ buttonClass }}"
+  type="button"
+  icon="fas {{ buttonIcon }}"
+  (click)="toggleMenu.emit(data); actionMenu.toggle($event)"
+></button>
+
+<p-menu #actionMenu [popup]="true" [model]="actions" appendTo="body"></p-menu>

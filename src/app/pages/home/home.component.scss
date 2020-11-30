@@ -1,0 +1,11 @@
+@import "src/theme/theme-variables";
+
+/* 
+  ::ng-deep disables the Angular View Encapsulation to override default styles of Primeng. 
+  However, with the use of :host, these overriding styles will only work within this component 
+*/
+:host {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - #{$navbar-height});
+}

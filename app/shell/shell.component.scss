@@ -1,0 +1,49 @@
+@import "src/theme/theme-variables";
+@import "src/theme/utils";
+
+/* 
+  ::ng-deep disables the Angular View Encapsulation to override default styles of Primeng. 
+  However, with the use of :host, these overiding styles will only work within this component 
+*/
+
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  ::ng-deep {
+    .navbar {
+      padding: $space-8 $space-16;
+    }
+
+    .sidebar {
+      &.p-sidebar {
+        padding: 0;
+      }
+
+      &__header {
+        height: $navbar-height;
+        display: flex;
+        align-items: center;
+      }
+
+      &__navmenu.p-menu {
+        width: 100%;
+        border: 0;
+      }
+    }
+  }
+}
+
+.app-content {
+  padding: $app-content-horizontal-padding;
+  padding-top: 0;
+  height: 100%;
+  width: 100%;
+
+  &--narrowed {
+    margin-left: $sidebar-width;
+    width: calc(100% - #{$sidebar-width});
+    transition: margin-left 0.3s;
+  }
+}

@@ -1,0 +1,25 @@
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ */
+
+// stylelint-disable-next-line selector-max-universal
+html {
+  font-size: $root-font-size;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Primeng utility classes */
+.p-component {
+  color: $text;
+}

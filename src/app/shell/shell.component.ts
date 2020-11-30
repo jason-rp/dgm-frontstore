@@ -15,15 +15,17 @@ export class ShellComponent implements OnInit, OnDestroy {
 
   readonly navMenu: MenuItem[] = [
     {
+      label: this.translateService.instant('Dashboard'),
+      routerLink: ['dashboard'],
+    },
+    {
       label: this.translateService.instant('User management'),
       routerLink: ['users'],
     },
     {
-      label: this.translateService.instant('Groups'),
-    },
-    {
-      label: this.translateService.instant('Alarm function'),
-    },
+      label: this.translateService.instant('Heros'),
+      routerLink: ['heroes'],
+    }, 
   ];
 
   paginatorFirstText = this.translateService.instant('First');
@@ -34,14 +36,14 @@ export class ShellComponent implements OnInit, OnDestroy {
     private translateService: TranslateService,
     private authenticationService: AuthenticationService,
     private appService: AppService
-  ) {}
+  ) { }
 
   ngOnInit() {
     // TODO: removed after calling real API endpoints
     this.appService.isLoading = false;
   }
 
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void { }
 
   get title(): string {
     return this.titleService.getTitle();

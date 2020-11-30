@@ -9,7 +9,6 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessagesComponent } from './messages/messages.component';
 
 import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
@@ -23,6 +22,7 @@ import { BlockUIModule } from '@prmng/blockui';
 import { ToastModule } from '@prmng/toast';
 import { ConfirmDialogModule } from '@prmng/confirmdialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 // required for AoT
 export class MyMissingTranslationHandler implements MissingTranslationHandler {
   handle(params: MissingTranslationHandlerParams) {

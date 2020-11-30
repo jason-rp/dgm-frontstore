@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './pages/heroes/hero-detail/hero-detail.component';
 import { HeroesComponent } from './pages/heroes/heroes.component';
 import { Shell } from '@app/shell/shell.service';
 import { AuthenticationGuard } from '@app/auth/authentication.guard';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

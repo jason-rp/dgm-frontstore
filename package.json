@@ -13,7 +13,8 @@
     "dev:ssr": "ng run dgm-frontstore:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build --prod && ng run dgm-frontstore:server:production",
-    "prerender": "ng run dgm-frontstore:prerender"
+    "prerender": "ng run dgm-frontstore:prerender",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {

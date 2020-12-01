@@ -29,13 +29,14 @@
     "lib": [
       "es2018",
       "dom"
-    ],
-    "enableIvy": false
+    ]
+    
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     // TODO(gkalpak): Fix the code and enable this (i.e. switch from `fullTemplateTypeCheck` to `strictTemplates`).
     "fullTemplateTypeCheck": true,// "strictTemplates": true
+    "enableIvy": false
   }
 }

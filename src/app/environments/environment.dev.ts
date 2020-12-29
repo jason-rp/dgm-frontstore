@@ -4,4 +4,5 @@ export const environment = {
   ...defaultEnvironment,
   production: true,
   hmr: false,
+  API_ENDPOINT: ''
 };

@@ -33,6 +33,7 @@
     
   },
   "angularCompilerOptions": {
+    "enableIvy": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     // TODO(gkalpak): Fix the code and enable this (i.e. switch from `fullTemplateTypeCheck` to `strictTemplates`).

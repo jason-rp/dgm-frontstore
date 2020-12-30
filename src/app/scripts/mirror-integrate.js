@@ -2,12 +2,12 @@ var dui = null;
 
 let Service = {
 
-    GetPrices: function (response) {
+    GetPrices: function(response) {
         let txt = "TOTALS: <br>" + JSON.stringify(response.breakdown.totals) + "<br><br>" + "DETAILS: <br>" + JSON.stringify(response.breakdown.Glass.AB) + "<br>";
         $('#response').html(txt);
     },
 
-    DuiFailed: function (response) {
+    DuiFailed: function(response) {
         alert("DUI FAILED!");
         console.log(response);
     }
@@ -84,13 +84,13 @@ function InitiateDrawingUI() {
         consumers: SpecifyConsumers() //Optional, but needed
     }
 
-    let mode = "singleMirror"; // Use this mode for now
-
+    // let mode = "singleMirror"; // Use this mode for now
+    let user = { mode: "singleMirror" };
     /*
         For faster performance, use only ONE DUI in your project. If you don't need it, you can hide the div.
         The purpose is to handle the DUI by calling its methods.
     */
-    dui = new DrawingUI(mode, settings);
+    dui = new DrawingUI(user, settings);
 
 }
 

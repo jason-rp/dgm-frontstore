@@ -32,7 +32,7 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({ appId: 'tour-of-heroes' }),
+    BrowserModule.withServerTransition({ appId: 'dgm-store' }),
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,

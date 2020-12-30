@@ -14,18 +14,23 @@ export class ShellComponent implements OnInit, OnDestroy {
   isSidebarShown = false;
 
   readonly navMenu: MenuItem[] = [
+    // {
+    //   label: this.translateService.instant('Dashboard'),
+    //   routerLink: ['dashboard'],
+    // },
+    // {
+    //   label: this.translateService.instant('User management'),
+    //   routerLink: ['users'],
+    // },
+    // {
+    //   label: this.translateService.instant('Heros'),
+    //   routerLink: ['heroes'],
+    // }
     {
-      label: this.translateService.instant('Dashboard'),
-      routerLink: ['dashboard'],
-    },
-    {
-      label: this.translateService.instant('User management'),
-      routerLink: ['users'],
-    },
-    {
-      label: this.translateService.instant('Heros'),
-      routerLink: ['heroes'],
-    }, 
+        label: this.translateService.instant('shower'),
+        routerLink: ['home'],
+      
+    }
   ];
 
   paginatorFirstText = this.translateService.instant('First');

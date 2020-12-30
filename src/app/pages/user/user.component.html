@@ -1,0 +1,124 @@
+<p-card styleClass="card-container">
+  <p-table
+    #table
+    dataKey="id"
+    styleClass="ui-table-customized"
+    [responsive]="true"
+    [value]="data"
+    [rowHover]="true"
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [paginator]="true"
+    selectionMode="single"
+    [(selection)]="selectedData"
+    (onRowSelect)="rowSelect()"
+    [globalFilterFields]="globalSearchFields"
+  >
+    <!-- Caption-->
+    <ng-template pTemplate="caption">
+      <div class="ui-table-caption-container">
+        <div class="caption__search">
+          <div class="caption__search-option">
+            <label translate>Using Global Search</label>
+            <p-inputSwitch [(ngModel)]="globalSearch" (onChange)="changeModeSearch($event)"></p-inputSwitch>
+          </div>
+          <input
+            class="caption__search-input"
+            *ngIf="globalSearch"
+            pInputText
+            type="text"
+            (input)="table.filterGlobal($event.target.value, 'contains')"
+            [placeholder]="'Global Search' | translate"
+          />
+        </div>
+        <div>
+          <p-button
+            styleClass="btn-icon"
+            icon="fas fa-sync-alt"
+            [title]="'Refresh' | translate"
+            (click)="getData()"
+          ></p-button>
+          <p-button
+            styleClass="caption__btn"
+            icon="fas fa-plus-circle"
+            [title]="'Create' | translate"
+            [label]="'Create' | translate"
+            (click)="create()"
+          ></p-button>
+        </div>
+      </div>
+    </ng-template>
+
+    <!-- Header -->
+    <ng-template pTemplate="header">
+      <tr>
+        <th *ngFor="let col of tableCols" [pSortableColumn]="col.field" pReorderableColumn>
+          {{ col.header | translate }}
+          <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+        <th class="actions"></th>
+      </tr>
+      <tr *ngIf="!globalSearch">
+        <th class="filter-header" *ngFor="let col of tableCols">
+          <ng-container [ngSwitch]="col.field">
+            <input
+              *ngSwitchDefault
+              pInputText
+              [type]="'text'"
+              (input)="table.filter($event.target.value, col.field, 'contains')"
+              placeholder="{{ 'Search by keyword' | translate }}"
+              class="ui-column-filter"
+            />
+          </ng-container>
+        </th>
+        <th class="actions"></th>
+      </tr>
+    </ng-template>
+
+    <!-- Body -->
+    <ng-template pTemplate="body" let-rowData>
+      <tr
+        class="ui-selectable-row"
+        [pSelectableRowDblClick]="rowData"
+        title="{{ 'Double clicks to view' | translate }}"
+      >
+        <td *ngFor="let col of tableCols">
+          <ng-container [ngSwitch]="col.field">
+            <ng-template ngSwitchDefault>
+              <span class="ui-column-title">{{ col.header }}</span>
+              <span class="ui-column-content">{{ utilities.getFieldValue(rowData, col.field) }}</span>
+            </ng-template>
+          </ng-container>
+        </td>
+        <td class="actions" [ngClass]="{ 'actions--hidden': actions.length === 0 }">
+          <app-action-menu
+            [actions]="actions"
+            [data]="rowData"
+            (toggleMenu)="onActionMenuToggle($event)"
+          ></app-action-menu>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="8" class="empty-message">{{ 'No users found' | translate }}.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>
+
+<app-user-details
+  *ngIf="showDetails"
+  [readonly]="readonly"
+  [data]="selectedData"
+  (submitDialog)="onSubmitForm()"
+  (hideDialog)="onHideForm()"
+></app-user-details>
+
+<app-user-password
+  *ngIf="showSetPasswordForm"
+  [readonly]="readonly"
+  [data]="selectedData"
+  (submitDialog)="onSubmitForm()"
+  (hideDialog)="onHideForm()"
+></app-user-password>

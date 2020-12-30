@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, BehaviorSubject } from 'rxjs';
-import { StorageEnum } from '@app/@shared/enums/storage.enum';
+import {  STORAGE } from '@app/@shared/enums/storage.enum';
 import { Credentials, CredentialsService } from './credentials.service';
 import { Logger } from '@app/@shared/services/logger.service';
 
@@ -49,7 +49,15 @@ export class AuthenticationService {
   }
 
   isAuthenticated() {
-    const token = localStorage.getItem(StorageEnum.AccessToken);
+    const token = localStorage.getItem(STORAGE.accessToken);
     return !!token;
+  }
+
+  setStorage(key: string, value: any) {
+    localStorage.setItem(key, value);
+  }
+
+  getStorage(key: string) {
+    return localStorage.getItem(key);
   }
 }

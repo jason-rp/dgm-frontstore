@@ -1,0 +1,24 @@
+#dui {
+    background-color: #e2e2e2;
+    padding: 20px;
+    margin: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+#mainDrwg {
+    width: 100%;
+    height: 500px;
+    border: 1px solid black;
+    background-color: #fff1db;
+}
+
+#shapeOptions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#shapeOptions button {
+    margin-left: 10px;
+}

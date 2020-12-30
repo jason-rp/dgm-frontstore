@@ -30,7 +30,10 @@
             "styles": [
               "src/main.scss"
             ],
-            "scripts": []
+            "scripts": [     
+              "src/app/scripts/mirror-integrate.js",
+              "src/app/scripts/drawing-ui.js"
+            ]
           },
           "configurations": {
             "production": {

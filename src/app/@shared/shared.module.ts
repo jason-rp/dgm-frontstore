@@ -14,4 +14,4 @@ import { ButtonModule } from 'primeng/button';
   declarations: [LoaderComponent, ActionMenuComponent, PageHeaderComponent],
   exports: [LoaderComponent, ActionMenuComponent, PageHeaderComponent],
 })
-export class AppSharedModule {}
+export class SharedModule {}

@@ -1,0 +1,90 @@
+<p-dialog
+  styleClass="modal-customized modal-sm"
+  modal="modal"
+  [(visible)]="display"
+  [header]="
+    readonly
+      ? ('View' | translate)
+      : data && data.id && data.id.length > 0
+      ? ('Edit' | translate)
+      : ('Create' | translate)
+  "
+  [resizable]="false"
+  (onHide)="hideDialog.emit()"
+>
+  <!-- Dialog content -->
+  <form [formGroup]="form">
+    <!-- First Name -->
+    <div class="p-grid">
+      <span class="ui-float-label p-col-12">
+        <input id="float-input-first-name" type="text" pInputText formControlName="firstName" />
+        <label class="required" for="float-input-first-name">{{ 'First Name' | translate }}</label>
+      </span>
+    </div>
+
+    <!-- Last Name -->
+    <div class="p-grid">
+      <span class="ui-float-label p-col-12">
+        <input id="float-input-last-name" type="text" pInputText formControlName="lastName" />
+        <label for="float-input-last-name">{{ 'Last Name' | translate }}</label>
+      </span>
+    </div>
+
+    <!-- Email -->
+    <div class="p-grid">
+      <span class="ui-float-label p-col-12">
+        <input id="float-input-email" type="text" pInputText formControlName="email" />
+        <label class="required" for="float-input-email">{{ 'Email' | translate }}</label>
+      </span>
+    </div>
+
+    <!-- Password -->
+    <div class="p-grid" *ngIf="!(data && data.id && data.id.length > 0)">
+      <span class="ui-float-label p-col-12">
+        <input id="float-input-password" type="password" pInputText formControlName="password" />
+        <label class="required" for="float-input-password">{{ 'Password' | translate }}</label>
+      </span>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="p-grid" *ngIf="!(data && data.id && data.id.length > 0)">
+      <span class="ui-float-label p-col-12">
+        <input id="float-input-confirm-password" type="password" pInputText formControlName="confirmPassword" />
+        <label class="required" for="float-input-confirm-password">{{ 'Confirm Password' | translate }}</label>
+      </span>
+    </div>
+
+    <!-- Roles -->
+    <div class="p-grid">
+      <span class="ui-float-label p-col-12">
+        <p-multiSelect
+          styleClass="w-100-p mgy-16"
+          id="float-input-role"
+          [options]="roles"
+          [resetFilterOnHide]="true"
+          defaultLabel="&#8203;"
+          formControlName="selectedRoles"
+          appendTo="body"
+        ></p-multiSelect>
+        <label class="required" for="float-input-role">{{ 'Roles' | translate }}</label>
+      </span>
+    </div>
+  </form>
+
+  <!-- Dialog footer -->
+  <p-footer
+    ><p-button
+      *ngIf="!readonly"
+      icon="pi pi-check"
+      [label]="'Save' | translate"
+      [disabled]="form.invalid"
+      (click)="onSave()"
+    ></p-button>
+    <p-button
+      styleClass="ui-button-secondary"
+      icon="pi pi-times"
+      [label]="readonly ? ('Close' | translate) : ('Cancel' | translate)"
+      (click)="hideDialog.emit()"
+    ></p-button>
+  </p-footer>
+</p-dialog>

@@ -1,0 +1,236 @@
+<div class="dg-desktop">
+    <div class="dg-breadcrum-wrapper">
+        <div class="dg-breadcrum">
+            <a href="/" class="dg-breadcrum-item">Home</a>
+            <div class="dg-arrow right"></div>
+            <a href="/" class="dg-breadcrum-item">Shower Doors</a>
+            <div class="dg-arrow right"></div>
+            <div class="dg-breadcrum-item">Prima</div>
+        </div>
+    </div>
+    <div class="dg-customization-wrapper">
+        <div class="dg-customization-section">
+            <div class="dg-section-block section-customization">
+                <div class="dg-popup-content">
+                    <div class="dg-customization-step">
+                        <div class="dg-customization-title">
+                            <h3>Glass Type</h3>
+                            <button class="dg-button-small help-button">
+                                <img src="images/play.png" alt="play" />Help Video
+                            </button>
+                        </div>
+                        <div class="dg-customization-option">
+                            <div class="dg-customizations">
+                                <label for="glass_type_clear" class="dg-customization">
+                                    <div class="dg-customization-step-image">
+                                        <img alt="customize option"
+                                            src="https://d38viqszhuns2.cloudfront.net/img/option/Type-Clear.jpg" />
+                                    </div>
+                                    <div class="dg-customization-name">Clear</div>
+                                    <input type="radio" name="glass_type" id="glass_type_clear" />
+                                </label><label for="glass_type_hd" class="dg-customization">
+                                    <div class="dg-customization-image">
+                                        <img alt="customize option"
+                                            src="https://d38viqszhuns2.cloudfront.net/img/option/Type-HD.jpg" />
+                                    </div>
+                                    <div class="dg-customization-name">HD</div>
+                                    <input type="radio" name="glass_type" id="glass_type_hd" />
+                                </label><label for="glass_type_bronze" class="dg-customization">
+                                    <div class="dg-customization-image">
+                                        <img alt="customize option"
+                                            src="https://d38viqszhuns2.cloudfront.net/img/option/Type-Bronze.jpg" />
+                                    </div>
+                                    <div class="dg-customization-name">Bronze</div>
+                                    <input type="radio" name="glass_type" id="glass_type_bronze" />
+                                </label><label for="glass_type_opaque_clear" class="dg-customization">
+                                    <div class="dg-customization-image">
+                                        <img alt="customize option"
+                                            src="https://d38viqszhuns2.cloudfront.net/img/option/Type-Frosted.jpg" />
+                                    </div>
+                                    <div class="dg-customization-name">Opaque Clear</div>
+                                    <input type="radio" name="glass_type" id="glass_type_opaque_clear" />
+                                </label><label for="glass_type_rain" class="dg-customization">
+                                    <div class="dg-customization-image">
+                                        <img alt="customize option"
+                                            src="https://d38viqszhuns2.cloudfront.net/img/option/Type-Rain.jpg" />
+                                    </div>
+                                    <div class="dg-customization-name">Rain</div>
+                                    <input type="radio" name="glass_type" id="glass_type_rain" />
+                                </label><label for="glass_type_gray" class="dg-customization">
+                                    <div class="dg-customization-image">
+                                        <img alt="customize option"
+                                            src="https://d38viqszhuns2.cloudfront.net/img/option/Type-Gray.jpg" />
+                                    </div>
+                                    <div class="dg-customization-name">Gray</div>
+                                    <input type="radio" name="glass_type" id="glass_type_gray" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="dg-customization-actions">
+                            <button class="back-button">
+                                <img alt="go back" src="images/back.png" />Back</button><button class="cta">Next: Glass
+                                Surface</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dg-section-block section-image">
+                <div class="dg-progress">
+                    <div class="dg-progress-step step-done">
+                        <div class="dg-progress-dot"></div>
+                        <div class="dg-progress-name">Sizes</div>
+                    </div>
+                    <div class="dg-progress-step step-done">
+                        <div class="dg-progress-dot"></div>
+                        <div class="dg-progress-name">Glass Type</div>
+                    </div>
+                    <div class="dg-progress-step step-done">
+                        <div class="dg-progress-dot"></div>
+                        <div class="dg-progress-name">Glass Thickness</div>
+                    </div>
+                    <div class="dg-progress-step step-done">
+                        <div class="dg-progress-dot"></div>
+                        <div class="dg-progress-name">Glass Surface Protection</div>
+                    </div>
+                    <div class="dg-progress-step step-done">
+                        <div class="dg-progress-dot"></div>
+                        <div class="dg-progress-name">Hardware Finish</div>
+                    </div>
+                    <div class="dg-progress-step step-done">
+                        <div class="dg-progress-dot"></div>
+                        <div class="dg-progress-name">Attachment Hardware</div>
+                    </div>
+                    <div class="dg-progress-step step-active">
+                        <div class="dg-progress-dot"></div>
+                        <div class="dg-progress-name">Summary</div>
+                    </div>
+                </div>
+                <div class="dg-customization-step-image">
+                    <div id="dui">
+                        <!-- This div is the "globalDiv" -->
+                        <div>
+                            <div>
+                                <div>
+                                    <div id="mainDrwg">
+                                        <!--
+                                    This div is where the drawing will be plaed.
+                                    Please make sure that its width and height are somehow specified.
+                                -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="shapeOptions">
+                            <button class="dg-button-small"  value="Rectangle"
+                                onclick="SetShape(0)">Rectangle</button>
+                            <button class="dg-button-small"  value="Square" onclick="SetShape(1)">Square</button>
+                            <button class="dg-button-small"  value="Ellipse" onclick="SetShape(2)">Ellipse
+                            </button>
+                            <button class="dg-button-small"  value="Circle" onclick="SetShape(3)">Circle
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div id="response">
+                        <!-- This div is for your "consumer" -->
+                        <!-- </div> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="dg-customization-summary">
+                <div class="dg-customization-step step-active">
+                    <div class="dg-customization-option">
+                        <div class="dg-customization-title">
+                            <h3>Summary</h3>
+                            <span>SKU: MeFsSR</span>
+                        </div>
+                        <div class="dg-summary-item">
+                            <div class="dg-summary-item-image">
+                                <img alt="customize option"
+                                    src="https://d38viqszhuns2.cloudfront.net/img/option/Type-Clear.jpg" />
+                            </div>
+                            <div class="dg-summary-item-content">
+                                <span>Glass Type</span>Clear
+                            </div>
+                            <div class="dg-summary-item-action">
+                                <button class="dg-button-small">Change</button>
+                            </div>
+                        </div>
+                        <div class="dg-summary-item">
+                            <div class="dg-summary-item-image">
+                                <img alt="customize option"
+                                    src="https://s3.amazonaws.com/commonedge/img/option/thick-3-8.jpg" />
+                            </div>
+                            <div class="dg-summary-item-content">
+                                <span>Glass Thickness</span>3/8"
+                            </div>
+                            <div class="dg-summary-item-action">
+                                <button class="dg-button-small">Change</button>
+                            </div>
+                        </div>
+                        <div class="dg-summary-item">
+                            <div class="dg-summary-item-image">
+                                <img alt="customize option"
+                                    src="https://d38viqszhuns2.cloudfront.net/img/option/No-ClearShield.jpg" />
+                            </div>
+                            <div class="dg-summary-item-content">
+                                <span>Glass Surface Protection</span>No ClearShield
+                            </div>
+                            <div class="dg-summary-item-action">
+                                <button class="dg-button-small">Change</button>
+                            </div>
+                        </div>
+                        <div class="dg-summary-item">
+                            <div class="dg-summary-item-image">
+                                <img alt="customize option"
+                                    src="https://d38viqszhuns2.cloudfront.net/img/option/Finish-Chrome.jpg" />
+                            </div>
+                            <div class="dg-summary-item-content">
+                                <span>Hardware Finish</span>Chrome
+                            </div>
+                            <div class="dg-summary-item-action">
+                                <button class="dg-button-small">Change</button>
+                            </div>
+                        </div>
+                        <div class="dg-summary-item">
+                            <div class="dg-summary-item-image">
+                                <img alt="customize option"
+                                    src="https://s3.amazonaws.com/commonedge/img/option/Hndl-Standard.jpg" />
+                            </div>
+                            <div class="dg-summary-item-content">
+                                <span>Handle Type</span>Standard Handle
+                            </div>
+                            <div class="dg-summary-item-action">
+                                <button class="dg-button-small">Change</button>
+                            </div>
+                        </div>
+                        <div class="dg-form">
+                            <div class="dg-customization-title">
+                                <h3>Contact</h3>
+                            </div>
+                            <p>
+                                Please leave your info here, Dulles Glass will contact,
+                                consult and send you quotation.
+                            </p>
+                            <div class="dg-form-item">
+                                <label>Name</label><input type="text" />
+                            </div>
+                            <div class="dg-form-item">
+                                <label>Email</label><input type="text" />
+                            </div>
+                            <div class="dg-form-item">
+                                <label>Phone number</label><input type="text" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dg-customization-actions">
+                        <button class="cta">Contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

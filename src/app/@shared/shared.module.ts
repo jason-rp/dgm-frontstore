@@ -8,10 +8,12 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ActionMenuComponent } from './components/action-menu/action-menu.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { ButtonModule } from 'primeng/button';
+import { HeaderComponent } from './components/header/header.component';
+import { ProfileDropdownComponent } from './components/header/profile-dropdown/profile-dropdown.component';
 
 @NgModule({
   imports: [CommonModule, TranslateModule, FormsModule, ProgressSpinnerModule, MenuModule, ButtonModule],
-  declarations: [LoaderComponent, ActionMenuComponent, PageHeaderComponent],
-  exports: [LoaderComponent, ActionMenuComponent, PageHeaderComponent],
+  declarations: [LoaderComponent, ActionMenuComponent, PageHeaderComponent, HeaderComponent, ProfileDropdownComponent],
+  exports: [LoaderComponent, ActionMenuComponent, PageHeaderComponent, HeaderComponent, ProfileDropdownComponent],
 })
 export class SharedModule {}

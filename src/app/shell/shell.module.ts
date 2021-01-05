@@ -12,6 +12,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenuModule } from 'primeng/menu';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SharedModule } from '@app/@shared/shared.module';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     InputTextModule,
     SidebarModule,
     MenuModule,
+    SharedModule
   ],
   declarations: [ShellComponent, NavbarComponent],
 })

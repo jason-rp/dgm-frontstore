@@ -14,7 +14,7 @@
   [ngClass]="{ 'app-content--narrowed': isSidebarShown }"
   style="--paginator-first-txt: '{{ paginatorFirstText }}'; --paginator-last-txt: '{{ paginatorLastText }}'"
 >
-  <app-navbar [isSidebarShown]="isSidebarShown" (logout)="logout()" (toggleSidebar)="toggleSidebar()"></app-navbar>
-
+  <!-- <app-navbar [issidebarshown]="isSidebarShown" (logout)="logout()" (toggleSidebar)="toggleSidebar()"></app-navbar> -->
+  <app-navbar></app-navbar>
   <router-outlet></router-outlet>
 </div>

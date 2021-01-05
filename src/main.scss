@@ -24,7 +24,11 @@
 
 /********** Theme customization **********/
 @import "/src/app/theme/theme";
+// bootstrap fonts
+$icon-font-path: "../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
 
+@import "/src/app/@shared/scss/themes";
+@import "/src/app/@shared/scss/custom_bootstrap";
 body {
     padding: 0;
     margin: 0;
